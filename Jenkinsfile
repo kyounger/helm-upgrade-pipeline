@@ -27,10 +27,10 @@ spec:
         TEST="test"
     }
     stages {
-        stage('Build with Kaniko') {
+        stage('Helm Upgrade') {
             steps {
                 checkout scm
-                container(name: 'kaniko', shell: '/busybox/sh') {
+                container(name: 'helmfile') {
                     withCredentials([file(credentialsId: 'kubeconfig-test', variable: 'KUBECONFIG')]) {
                         sh '''
                             export KUBECONFIG
