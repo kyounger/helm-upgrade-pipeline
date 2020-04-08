@@ -24,6 +24,7 @@ spec:
         }
     }
     environment {
+        TEST="test"
     }
     stages {
         stage('Build with Kaniko') {
