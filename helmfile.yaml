@@ -22,7 +22,7 @@ releases:
   - name: cbcore
     namespace: cloudbees
     chart: cloudbees/cloudbees-core
-    version: 3.10.0
+    version: 3.11.0
     values:
     - values/cbcore.yaml
     needs:
