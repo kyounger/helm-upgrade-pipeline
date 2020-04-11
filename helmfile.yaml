@@ -26,4 +26,4 @@ releases:
     values:
     - values/cbcore.yaml
     needs:
-    - nginx-ingress
+    - nginx-ingress/nginx-ingress
