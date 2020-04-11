@@ -31,10 +31,12 @@ spec:
             steps {
                 checkout scm
                 container(name: 'helmfile') {
-                    withCredentials([file(credentialsId: 'kubeconfig-test', variable: 'KUBECONFIG')]) {
+                    withCredentials([file(credentialsId: 'kubeconfig-cbinstaller', variable: 'KUBECONFIG')]) {
                         sh '''
                             export KUBECONFIG
-                            cat $KUBECONFIG
+                            helm list --namespace cloudbees
+                            helmfile apply
+                            helm list --namespace cloudbees
                         '''
                     }
                 }
